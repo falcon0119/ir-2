@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import IRImage from './components/IRImage';
+import { useEffect, useState } from 'react';
 
 function App() {
+  fetchIrInfo();
   const LatestIRImages = [
     {img: "https://picsum.photos/500/300?random=1", href: ""},
     {img: "https://picsum.photos/500/300?random=2", href: ""},
@@ -10,7 +12,19 @@ function App() {
     {img: "https://picsum.photos/500/300?random=4", href: ""},
     {img: "https://picsum.photos/500/300?random=5", href: ""},
   ];
-
+  const [irinfo, setIrInfo]=useState([]);
+  useEffect(()=>{
+    fetchIrInfo().then( (data)=>{
+      const hage=data;
+      console.log({hage});
+      const hage2 = hage.map((e) => {
+        return {img: e.ImgUrl, href: e.URL }
+      })
+      console.log({hage2})
+      setIrInfo(hage2)
+    })
+  }, [])
+  console.log(irinfo)
   return (
     <div className="App">
       <div className='Header'>
@@ -31,7 +45,7 @@ function App() {
         <div className='' style={{display: "flex", marginRight: "auto"}}>最新</div>
         <div className='' style={{display: "flex", overflow: "auto"}} >
           {
-             LatestIRImages.map((e) => (
+             irinfo.map((e) => (
               <IRImage href={e.href} src={e.img} />
             ))
           }
@@ -43,3 +57,26 @@ function App() {
 }
 
 export default App;
+
+async function fetchIrInfo(){
+  return fetch('https://nm422zt9ul.execute-api.us-east-1.amazonaws.com/default/search_ir_info', {
+    method: "GET",
+    
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    // 404 や 500 ステータスならここに到達する
+    throw new Error('Network response was not ok.');
+  })
+  .then(resJson => {
+    return resJson;
+  })
+  .catch(error => {
+    // ネットワークエラーの場合はここに到達する
+    console.error(error);
+  })
+}
+
+
