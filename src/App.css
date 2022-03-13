@@ -1,5 +1,34 @@
 .App {
   text-align: center;
+  /* background-color: rgb(255, 255, 255); */
+  background-color: #61dafb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px;
+  
+}
+
+#search_bar {
+
+  margin-top: 70px;
+  height: 30px;
+  width: 300px;
+}
+
+#search_btn {
+  margin-top: 30px;
+  height: 40px;
+  width : 200px;
+
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 .App-logo {
