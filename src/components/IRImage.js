@@ -1,16 +1,17 @@
 import PropTypes from "prop-types"
 
-const IRImage = ({src, href, width, height}) =>  {
-    return <a href={href}><img src = {src} width={width} height={height} /></a>
+const IRImage = ({ src, href, width, height }) => {
+    return <a href={href}><img src={src} width={width} height={height} style={{padding:12}}/></a>
 }
 
 IRImage.propTypes = {
-    src : PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
 }
 
 IRImage.defaultProps = {
-    src: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png",
+    width: 480,
+    height: 270,
 }
 
 export default IRImage;
