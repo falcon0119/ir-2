@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <div className='Header'>
-        <h1>IR 資料館</h1>
+        <h1>IR 死霊館</h1>
           <h2>IR資料館は、日本企業の投資家向け資料を
             検索できるサイトです。</h2>
 
