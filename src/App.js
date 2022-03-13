@@ -55,7 +55,7 @@ function App() {
       </div>
 
       <div className='Latest' style={{ width: "100%", backgroundColor: "white", margin: 20 }}>
-        <div className='' style={{ display: "flex", marginRight: "auto" }}>最新</div>
+        <div className='' style={{ display: "flex",marginRight: "auto",fontSize: 30 }}></div>
         <div className='' style={{ display: "flex", overflow: "auto" }} >
           {
             irinfo.map((e) => (
