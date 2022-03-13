@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background-color: rgb(255, 255, 255); */
-  background-color: #61dafb;
+  background-color: #f1f1f1;
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
@@ -23,7 +23,7 @@
   height: 40px;
   width : 200px;
 
-  background-color: #ff00f2;
+  background-color: #000000;
   border: none;
   border-radius: 15px;
   color: #fff;
